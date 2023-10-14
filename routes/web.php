@@ -15,7 +15,7 @@ Route::get('/contact_gts_learning', [FrontendController::class, 'contact_gts_lea
 Route::view('/dashboard', 'dashboard.dashboard')->middleware('perm:2');
 Route::get('/all_courses', [FrontendController::class, 'all_courses']);
 Route::get('/wish_list_courses', [FrontendController::class, 'wish_list_courses']);
-Route::get('/course_detail', [FrontendController::class, 'course_detail']);
+Route::get('/course_detail/{course_id}', [FrontendController::class, 'course_detail']);
 Route::get('/my_courses', [FrontendController::class, 'my_courses']);
 
 Route::get('/logout', [LoginController::class, 'logout']);

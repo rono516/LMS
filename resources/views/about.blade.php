@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Eduport - LMS, Education and Course Theme</title>
+    <title>GTS - Digital Learning</title>
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -20,13 +20,13 @@
         href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="assets/vendor/tiny-slider/tiny-slider.css">
-    <link rel="stylesheet" type="text/css" href="assets/vendor/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/font-awesome/css/all.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/tiny-slider/tiny-slider.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/aos/aos.css') }}">
 
     <!-- Theme CSS -->
-    <link id="style-switch" rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link id="style-switch" rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
 
 </head>
 
@@ -1569,14 +1569,14 @@ Footer END -->
     </div>
 
     <!-- Bootstrap JS -->
-    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- Vendors -->
-    <script src="assets/vendor/tiny-slider/tiny-slider.js"></script>
-    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="{{ asset('assets/vendor/tiny-slider/tiny-slider.js') }}"></script>
+    <script src="{{ asset('assets/vendor/aos/aos.js') }}"></script>
 
     <!-- Template Functions -->
-    <script src="assets/js/functions.js"></script>
+    <script src="{{ asset('assets/js/functions.js') }}"></script>
 
 </body>
 

@@ -11,7 +11,7 @@
     <meta name="description" content="GTS - Digital Learning">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,14 +20,14 @@
         href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap">
 
     <!-- Plugins CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="assets/vendor/tiny-slider/tiny-slider.css">
-    <link rel="stylesheet" type="text/css" href="assets/vendor/glightbox/css/glightbox.css">
-    <link rel="stylesheet" type="text/css" href="assets/vendor/choices/css/choices.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/font-awesome/css/all.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/tiny-slider/tiny-slider.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/glightbox/css/glightbox.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/vendor/choices/css/choices.min.css') }}">
 
     <!-- Theme CSS -->
-    <link id="style-switch" rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link id="style-switch" rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
 
 </head>
 
@@ -42,8 +42,10 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{-- <img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
                     <img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo"> --}}
-                    <img class="light-mode-item navbar-brand-item" src="assets/images/gts_logo.png" alt="logo">
-                    <img class="dark-mode-item navbar-brand-item" src="assets/images/gts_logo.png" alt="logo">
+                    <img class="light-mode-item navbar-brand-item" src="{{ asset('assets/images/gts_logo.png') }}"
+                        alt="logo">
+                    <img class="dark-mode-item navbar-brand-item" src="{{ asset('assets/images/gts_logo.png') }}"
+                        alt="logo">
                     {{-- <h3 class="light-mode-item navbar-brand-item">GTS Learning</h3> --}}
                 </a>
                 <!-- Logo END -->
@@ -708,7 +710,8 @@
                         <a class="avatar avatar-sm p-0" href="#" id="profileDropdown" role="button"
                             data-bs-auto-close="outside" data-bs-display="static" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            <img class="avatar-img rounded-circle" src="assets/images/avatar/01.jpg" alt="avatar">
+                            <img class="avatar-img rounded-circle" src="{{ asset('assets/images/avatar/01.jpg') }}"
+                                alt="avatar">
                         </a>
                         <ul class="dropdown-menu dropdown-animation dropdown-menu-end shadow pt-3"
                             aria-labelledby="profileDropdown">
@@ -717,8 +720,8 @@
                                 <div class="d-flex align-items-center">
                                     <!-- Avatar -->
                                     <div class="avatar me-3">
-                                        <img class="avatar-img rounded-circle shadow" src="assets/images/avatar/01.jpg"
-                                            alt="avatar">
+                                        <img class="avatar-img rounded-circle shadow"
+                                            src="{{ asset('assets/images/avatar/01.jpg') }}" alt="avatar">
                                     </div>
                                     <div>
                                         <a class="h6" href="#">{{ auth()->user()->name }}</a>
@@ -777,13 +780,13 @@ Page intro START -->
                 <div class="row py-5">
                     <div class="col-lg-8">
                         <!-- Badge -->
-                        <h6 class="mb-3 font-base bg-primary text-white py-2 px-4 rounded-2 d-inline-block">Digital
-                            Marketing</h6>
+                        <h6 class="mb-3 font-base bg-primary text-white py-2 px-4 rounded-2 d-inline-block">
+                            {{ $course->title }}</h6>
                         <!-- Title -->
-                        <h1>The Complete Digital Marketing Course - 12 Courses in 1</h1>
-                        <p>Satisfied conveying a dependent contented he gentleman agreeable do be. Warrant private
-                            blushes removed an in equally totally if. Delivered dejection necessary objection do Mr
-                            prevailed. Mr feeling does chiefly cordial in do.</p>
+                        <h1>{{ $course->short_description }}</h1>
+                        <p>All GTS courses are tailored to cover in depth fundamentals of the topic. You will be
+                            provided with video, text and documents necessary according to the tutors perspective and experience on how
+                            to approach the topic. Happy Learning!!</p>
                         <!-- Content -->
                         <ul class="list-inline mb-0">
                             <li class="list-inline-item h6 me-3 mb-1 mb-sm-0"><i
@@ -1775,8 +1778,8 @@ Page content START -->
                                         <div class="row g-0 align-items-center">
                                             <div class="col-md-5">
                                                 <!-- Image -->
-                                                <img src="assets/images/instructor/01.jpg" class="img-fluid rounded-3"
-                                                    alt="instructor-image">
+                                                <img src="{{ asset('assets/images/instructor/01.jpg') }}"
+                                                    class="img-fluid rounded-3" alt="instructor-image">
                                             </div>
                                             <div class="col-md-7">
                                                 <!-- Card body -->
@@ -2046,7 +2049,7 @@ Page content START -->
                                             <!-- Avatar -->
                                             <div class="avatar avatar-xl me-4 flex-shrink-0">
                                                 <img class="avatar-img rounded-circle"
-                                                    src="assets/images/avatar/09.jpg" alt="avatar">
+                                                    src="{{ asset('assets/images/avatar/09.jpg') }}" alt="avatar">
                                             </div>
                                             <!-- Text -->
                                             <div>
@@ -2096,7 +2099,7 @@ Page content START -->
                                             <!-- Avatar -->
                                             <div class="avatar avatar-lg me-4 flex-shrink-0">
                                                 <img class="avatar-img rounded-circle"
-                                                    src="assets/images/avatar/02.jpg" alt="avatar">
+                                                    src="{{ asset('assets/images/avatar/02.jpg') }}" alt="avatar">
                                             </div>
                                             <!-- Text -->
                                             <div>
@@ -2121,7 +2124,7 @@ Page content START -->
                                             <!-- Avatar -->
                                             <div class="avatar avatar-xl me-4 flex-shrink-0">
                                                 <img class="avatar-img rounded-circle"
-                                                    src="assets/images/avatar/07.jpg" alt="avatar">
+                                                    src="{{ asset('assets/images/avatar/07.jpg') }}" alt="avatar">
                                             </div>
                                             <!-- Text -->
                                             <div>
@@ -2374,8 +2377,8 @@ Page content START -->
                                 <!-- Video START -->
                                 <div class="card shadow p-2 mb-4 z-index-9">
                                     <div class="overflow-hidden rounded-3">
-                                        <img src="assets/images/courses/4by3/01.jpg" class="card-img"
-                                            alt="course image">
+                                        <img src="{{ asset('assets/images/courses/4by3/01.jpg') }}"
+                                            class="card-img" alt="course image">
                                         <!-- Overlay -->
                                         <div class="bg-overlay bg-dark opacity-6"></div>
                                         <div class="card-img-overlay d-flex align-items-start flex-column p-3">
@@ -2489,7 +2492,8 @@ Page content START -->
                                     <div class="row gx-3 mb-3">
                                         <!-- Image -->
                                         <div class="col-4">
-                                            <img class="rounded" src="assets/images/courses/4by3/21.jpg"
+                                            <img class="rounded"
+                                                src="{{ asset('assets/images/courses/4by3/21.jpg') }}"
                                                 alt="">
                                         </div>
                                         <!-- Info -->
@@ -2512,7 +2516,8 @@ Page content START -->
                                     <div class="row gx-3">
                                         <!-- Image -->
                                         <div class="col-4">
-                                            <img class="rounded" src="assets/images/courses/4by3/18.jpg"
+                                            <img class="rounded"
+                                                src="{{ asset('assets/images/courses/4by3/18.jpg') }}"
                                                 alt="">
                                         </div>
                                         <!-- Info -->
@@ -2587,8 +2592,8 @@ Listed courses START -->
                                 <div class="card p-2 border">
                                     <div class="rounded-top overflow-hidden">
                                         <div class="card-overlay-hover">
-                                            <img src="assets/images/courses/4by3/17.jpg" class="card-img-top"
-                                                alt="course image">
+                                            <img src="{{ asset('assets/images/courses/4by3/17.jpg') }}"
+                                                class="card-img-top" alt="course image">
                                         </div>
                                         <!-- Hover element -->
                                         <div class="card-img-overlay">
@@ -2627,7 +2632,8 @@ Listed courses START -->
                                             <!-- Avatar -->
                                             <div class="avatar avatar-sm">
                                                 <img class="avatar-img rounded-circle"
-                                                    src="assets/images/avatar/09.jpg" alt="avatar">
+                                                    src="{{ asset('assets/images/avatar/09.jpg') }}"
+                                                    alt="avatar">
                                             </div>
                                         </div>
                                         <!-- Divider -->
@@ -2653,8 +2659,8 @@ Listed courses START -->
                                 <div class="card p-2 border">
                                     <div class="rounded-top overflow-hidden">
                                         <div class="card-overlay-hover">
-                                            <img src="assets/images/courses/4by3/18.jpg" class="card-img-top"
-                                                alt="course image">
+                                            <img src="{{ asset('assets/images/courses/4by3/18.jpg') }}"
+                                                class="card-img-top" alt="course image">
                                         </div>
                                         <!-- Hover element -->
                                         <div class="card-img-overlay">
@@ -2693,7 +2699,8 @@ Listed courses START -->
                                             <!-- Avatar -->
                                             <div class="avatar avatar-sm">
                                                 <img class="avatar-img rounded-circle"
-                                                    src="assets/images/avatar/07.jpg" alt="avatar">
+                                                    src="{{ asset('assets/images/avatar/07.jpg') }}"
+                                                    alt="avatar">
                                             </div>
                                         </div>
                                         <!-- Divider -->
@@ -2719,8 +2726,8 @@ Listed courses START -->
                                 <div class="card p-2 border">
                                     <div class="rounded-top overflow-hidden">
                                         <div class="card-overlay-hover">
-                                            <img src="assets/images/courses/4by3/21.jpg" class="card-img-top"
-                                                alt="course image">
+                                            <img src="{{ asset('assets/images/courses/4by3/21.jpg') }}"
+                                                class="card-img-top" alt="course image">
                                         </div>
                                         <!-- Hover element -->
                                         <div class="card-img-overlay">
@@ -2759,7 +2766,8 @@ Listed courses START -->
                                             <!-- Avatar -->
                                             <div class="avatar avatar-sm">
                                                 <img class="avatar-img rounded-circle"
-                                                    src="assets/images/avatar/05.jpg" alt="avatar">
+                                                    src="{{ asset('assets/images/avatar/05.jpg') }}"
+                                                    alt="avatar">
                                             </div>
                                         </div>
                                         <!-- Divider -->
@@ -2784,8 +2792,8 @@ Listed courses START -->
                                 <div class="card p-2 border">
                                     <div class="rounded-top overflow-hidden">
                                         <div class="card-overlay-hover">
-                                            <img src="assets/images/courses/4by3/20.jpg" class="card-img-top"
-                                                alt="course image">
+                                            <img src="{{ asset('assets/images/courses/4by3/20.jpg') }}"
+                                                class="card-img-top" alt="course image">
                                         </div>
                                         <!-- Hover element -->
                                         <div class="card-img-overlay">
@@ -2824,7 +2832,8 @@ Listed courses START -->
                                             <!-- Avatar -->
                                             <div class="avatar avatar-sm">
                                                 <img class="avatar-img rounded-circle"
-                                                    src="assets/images/avatar/02.jpg" alt="avatar">
+                                                    src="{{ asset('assets/images/avatar/02.jpg') }}"
+                                                    alt="avatar">
                                             </div>
                                         </div>
                                         <!-- Divider -->
@@ -2866,8 +2875,10 @@ Footer START -->
                 <div class="col-lg-3">
                     <!-- logo -->
                     <a class="me-0" href="index.html">
-                        <img class="light-mode-item h-40px" src="assets/images/gts_logo.png" alt="logo">
-                        <img class="dark-mode-item h-40px" src="assets/images/gts_logo.png" alt="logo">
+                        <img class="light-mode-item h-40px" src="{{ asset('assets/images/gts_logo.png') }}"
+                            alt="logo">
+                        <img class="dark-mode-item h-40px" src="{{ asset('assets/images/gts_logo.png') }}"
+                            alt="logo">
                     </a>
                     <p class="my-3">GTS Learning platform is built specifically for a learner who is
                         dedicated to learning and improving their careers in an involving environment.</p>
@@ -3004,7 +3015,7 @@ Footer END -->
 
                     <!-- Element -->
                     <figure class="position-absolute bottom-0 end-0 mb-n4 me-n4 d-none d-sm-block">
-                        <img src="assets/images/element/01.svg" alt="element">
+                        <img src="{{ asset('assets/images/element/01.svg') }}" alt="element">
                     </figure>
                     <figure class="position-absolute top-0 end-0 z-index-n1 opacity-2">
                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -3075,15 +3086,15 @@ Footer END -->
     </div>
 
     <!-- Bootstrap JS -->
-    <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- Vendors -->
-    <script src="assets/vendor/tiny-slider/tiny-slider.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.js"></script>
-    <script src="assets/vendor/choices/js/choices.min.js"></script>
+    <script src="{{ asset('assets/vendor/tiny-slider/tiny-slider.js') }}"></script>
+    <script src="{{ asset('assets/vendor/glightbox/js/glightbox.js') }}"></script>
+    <script src="{{ asset('assets/vendor/choices/js/choices.min.js') }}"></script>
 
     <!-- Template Functions -->
-    <script src="assets/js/functions.js"></script>
+    <script src="{{ asset('assets/js/functions.js') }}"></script>
 
 </body>
 

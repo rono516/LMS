@@ -120,11 +120,17 @@
                         <div class="p-3 p-lg-5">
                             <!-- Title -->
                             <div class="text-center">
-                                <h2 class="fw-bold">Welcome to our largest digital learning community</h2>
-                                <p class="mb-0 h6 fw-light">Let's learn something new today!</p>
+                                <a href="{{ url('/') }}">
+                                    <h2 class="fw-bold">Welcome to our largest digital learning community</h2>
+                                </a>
+                                <a href="{{ url('/') }}">
+                                    <p class="mb-0 h6 fw-light">Let's learn something new today!</p>
+                                </a>
                             </div>
                             <!-- SVG Image -->
-                            <img src="assets/images/element/02.svg" class="mt-5" alt="">
+                            <a href="{{ url('/') }}">
+                                <img src="assets/images/element/02.svg" class="mt-5" alt="">
+                            </a>
                             <!-- Info -->
                             <div class="d-sm-flex mt-5 align-items-center justify-content-center">
                                 <ul class="avatar-group mb-2 mb-sm-0">
@@ -138,7 +144,11 @@
                                             src="assets/images/avatar/04.jpg" alt="avatar"></li>
                                 </ul>
                                 <!-- Content -->
-                                <p class="mb-0 h6 fw-light ms-0 ms-sm-3">4+ Students joined us, now it's your turn.</p>
+
+                                <a href="{{ url('/') }}">
+                                    <p class="mb-0 h6 fw-light ms-0 ms-sm-3">4+ Students joined us, now it's your turn.
+                                    </p>
+                                </a>
                             </div>
                         </div>
                     </div>

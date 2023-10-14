@@ -833,8 +833,7 @@ Main Banner START -->
                     <circle cx="180.4" cy="84.4" r="7.7"></circle>
                     <path d="m159.9 91.3c-3.8 0-6.9-3.1-6.9-6.9s3.1-6.9 6.9-6.9 6.9 3.1 6.9 6.9-3.1 6.9-6.9 6.9z">
                     </path>
-                    <path
-                        d="m139.4 90.5c-3.4 0-6.1-2.7-6.1-6.1s2.7-6.1 6.1-6.1 6.1 2.7 6.1 6.1c0 3.3-2.7 6.1-6.1 6.1z">
+                    <path d="m139.4 90.5c-3.4 0-6.1-2.7-6.1-6.1s2.7-6.1 6.1-6.1 6.1 2.7 6.1 6.1c0 3.3-2.7 6.1-6.1 6.1z">
                     </path>
                     <circle cx="118.9" cy="84.4" r="5.4"></circle>
                     <path d="m98.4 89c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2.1 4.6-4.6 4.6z"></path>
@@ -850,8 +849,7 @@ Main Banner START -->
                     <path d="m139.4 113.4c-3.4 0-6.1-2.7-6.1-6.1s2.7-6.1 6.1-6.1 6.1 2.7 6.1 6.1-2.7 6.1-6.1 6.1z">
                     </path>
                     <circle cx="118.9" cy="107.3" r="5.4"></circle>
-                    <path
-                        d="m98.4 111.9c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6c0 2.6-2.1 4.6-4.6 4.6z">
+                    <path d="m98.4 111.9c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6c0 2.6-2.1 4.6-4.6 4.6z">
                     </path>
                     <path d="m77.9 111.2c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8 3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z">
                     </path>
@@ -880,8 +878,7 @@ Main Banner START -->
                     <ellipse transform="matrix(.3862 -.9224 .9224 .3862 -55.794 222.61)" cx="139.4"
                         cy="153.2" rx="6.1" ry="6.1"></ellipse>
                     <circle cx="118.9" cy="153.2" r="5.4"></circle>
-                    <path
-                        d="m98.4 157.8c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6c0 2.6-2.1 4.6-4.6 4.6z">
+                    <path d="m98.4 157.8c-2.5 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6c0 2.6-2.1 4.6-4.6 4.6z">
                     </path>
                     <circle cx="77.9" cy="153.2" r="3.8"></circle>
                     <path d="m57.3 156.3c-1.7 0-3.1-1.4-3.1-3.1s1.4-3.1 3.1-3.1 3.1 1.4 3.1 3.1-1.4 3.1-3.1 3.1z">
@@ -1039,10 +1036,14 @@ Main Banner START -->
 
                         <div class="d-sm-flex align-items-center justify-content-center justify-content-lg-start">
                             <!-- Button -->
-                            <a @guest
-href="{{ url('/register') }}" @endguest
-                                @auth
-href="{{ url('/all_courses') }}" @endauth
+                            <a 
+                            @guest
+
+                                 href="{{ url('/register') }}"
+                            @endguest
+                            @auth
+                                href="{{ url('/all_courses') }}" 
+                            @endauth
                                 class="btn btn-lg btn-danger-soft me-2 mb-4 mb-sm-0">Get
                                 Started</a>
                             <!-- Video button -->
@@ -1151,7 +1152,7 @@ href="{{ url('/all_courses') }}" @endauth
                                 <div class="text-start ms-3">
                                     <h6 class="mb-0 text-white">Congratulations <span class="ms-4"><i
                                                 class="fas fa-check-circle text-success"></i></span></h6>
-                                    <p class="mb-0 small text-white">Your admission completed</p>
+                                    <p class="mb-0 small text-white">You're in the best learning platform</p>
                                 </div>
                             </div>
                         </div>
@@ -1310,7 +1311,8 @@ Popular course START -->
                                             </div>
                                             <!-- Title -->
                                             <h5 class="card-title fw-normal"><a
-                                                    href="{{ url('/course_detail') }}">{{ $course->title }}</a></h5>
+                                                    href="{{ url('/course_detail/' . $course->id) }}">{{ $course->title }}</a>
+                                            </h5>
                                             <p class="mb-2 text-truncate-2">{{ $course->short_description }}</p>
                                             <!-- Rating star -->
                                             <ul class="list-inline mb-0">
@@ -1461,7 +1463,8 @@ Trending courses START -->
                                             </div>
                                             <!-- Title -->
                                             <h5 class="card-title"><a
-                                                    href="{{ url('/course_detail') }}">{{ $course->title }}</a></h5>
+                                                    href="{{ url('/course_detail/' . $course->id) }}">{{ $course->title }}</a>
+                                            </h5>
                                             <!-- Rating -->
                                             <div class="d-flex justify-content-between mb-2">
                                                 <div class="hstack gap-2">

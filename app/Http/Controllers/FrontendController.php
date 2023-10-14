@@ -96,8 +96,16 @@ class FrontendController extends Controller
         return view('frontend.wish_list');
     }
 
-    public function course_detail()
+    public function course_detail($course_id)
     {
-        return view('frontend.course_detail');
+
+        $course = Course::find($course_id);
+        if (!$course) {
+            // abort('404')->rd;
+            return redirect('/');
+        }
+        return view('frontend.course_detail')->with([
+            'course' => $course,
+        ]);
     }
 }

@@ -90,7 +90,7 @@
 <html lang="en">
 
 <head>
-    <title>Eduport - LMS, Education and Course Theme</title>
+    <title>GTS - Digital Learning</title>
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
@@ -973,52 +973,55 @@ Page content START -->
 
                             <!-- SINGLE COURSE START -->
                             <!-- Card item START -->
-                           @foreach ($courses as $course )
-                           <div class="col-sm-6 col-lg-4 col-xl-3">
-                            <div class="card shadow h-100">
-                                <!-- Image -->
-                                <img src="assets/images/courses/4by3/08.jpg" class="card-img-top"
-                                    alt="course image">
-                                <!-- Card body -->
-                                <div class="card-body pb-0">
-                                    <!-- Badge and favorite -->
-                                    <div class="d-flex justify-content-between mb-2">
-                                        <a href="#" class="badge bg-purple bg-opacity-10 text-purple">All
-                                            level</a>
-                                        <a href="#" class="h6 fw-light mb-0"><i
-                                                class="far fa-heart"></i></a>
+                            @foreach ($courses as $course)
+                                <div class="col-sm-6 col-lg-4 col-xl-3">
+                                    <div class="card shadow h-100">
+                                        <!-- Image -->
+                                        <img src="assets/images/courses/4by3/08.jpg" class="card-img-top"
+                                            alt="course image">
+                                        <!-- Card body -->
+                                        <div class="card-body pb-0">
+                                            <!-- Badge and favorite -->
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <a href="#"
+                                                    class="badge bg-purple bg-opacity-10 text-purple">All
+                                                    level</a>
+                                                <a href="#" class="h6 fw-light mb-0"><i
+                                                        class="far fa-heart"></i></a>
+                                            </div>
+                                            <!-- Title -->
+                                            <h5 class="card-title"><a
+                                                    href="{{ url('/course_detail', $course->id) }}">{{ $course->title }}</a>
+                                            </h5>
+                                            <!-- Rating star -->
+
+                                            <ul class="list-inline mb-0">
+                                                <li class="list-inline-item me-0 small"><i
+                                                        class="fas fa-star text-warning"></i></li>
+                                                <li class="list-inline-item me-0 small"><i
+                                                        class="fas fa-star text-warning"></i></li>
+                                                <li class="list-inline-item me-0 small"><i
+                                                        class="fas fa-star text-warning"></i></li>
+                                                <li class="list-inline-item me-0 small"><i
+                                                        class="fas fa-star text-warning"></i></li>
+                                                <li class="list-inline-item me-0 small"><i
+                                                        class="far fa-star text-warning"></i></li>
+                                                <li class="list-inline-item ms-2 h6 fw-light mb-0">4.0/5.0</li>
+                                            </ul>
+                                        </div>
+                                        <!-- Card footer -->
+                                        <div class="card-footer pt-0 pb-3">
+                                            <hr>
+                                            <div class="d-flex justify-content-between">
+                                                <span class="h6 fw-light mb-0"><i
+                                                        class="far fa-clock text-danger me-2"></i>{{ $course->duration }}m</span>
+                                                <span class="h6 fw-light mb-0"><i
+                                                        class="fas fa-table text-orange me-2"></i>15 lectures</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <!-- Title -->
-                                    <h5 class="card-title"><a  href="{{ url('/course_detail') }}">{{$course->title}}</a></h5>
-                                    <!-- Rating star -->
-                                    
-                                    <ul class="list-inline mb-0">
-                                        <li class="list-inline-item me-0 small"><i
-                                                class="fas fa-star text-warning"></i></li>
-                                        <li class="list-inline-item me-0 small"><i
-                                                class="fas fa-star text-warning"></i></li>
-                                        <li class="list-inline-item me-0 small"><i
-                                                class="fas fa-star text-warning"></i></li>
-                                        <li class="list-inline-item me-0 small"><i
-                                                class="fas fa-star text-warning"></i></li>
-                                        <li class="list-inline-item me-0 small"><i
-                                                class="far fa-star text-warning"></i></li>
-                                        <li class="list-inline-item ms-2 h6 fw-light mb-0">4.0/5.0</li>
-                                    </ul>
                                 </div>
-                                <!-- Card footer -->
-                                <div class="card-footer pt-0 pb-3">
-                                    <hr>
-                                    <div class="d-flex justify-content-between">
-                                        <span class="h6 fw-light mb-0"><i
-                                                class="far fa-clock text-danger me-2"></i>{{ $course->duration }}m</span>
-                                        <span class="h6 fw-light mb-0"><i
-                                                class="fas fa-table text-orange me-2"></i>15 lectures</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>                               
-                           @endforeach
+                            @endforeach
                             <!-- Card item END -->
                             <!-- SINGLE COURSE END -->
 

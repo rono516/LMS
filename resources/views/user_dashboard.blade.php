@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Eduport - LMS, Education and Course Theme</title>
+    <title>GTS - Digital Learning</title>
 
     <!-- Meta Tags -->
     <meta charset="utf-8">

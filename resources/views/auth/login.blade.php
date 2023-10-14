@@ -1,77 +1,3 @@
-{{-- @extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection --}}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -116,11 +42,16 @@
                         <div class="p-3 p-lg-5">
                             <!-- Title -->
                             <div class="text-center">
-                                <h2 class="fw-bold">Welcome to our largest community</h2>
-                                <p class="mb-0 h6 fw-light">Let's learn something new today!</p>
+                                <a href="{{ url('/') }}">
+                                    <h2 class="fw-bold">Welcome to our largest community</h2>
+                                </a>
+                                <a href="{{ url('/') }}">
+                                    <p class="mb-0 h6 fw-light">Let's learn something new today!</p>
+                                </a>
                             </div>
                             <!-- SVG Image -->
-                            <img src="assets/images/element/02.svg" class="mt-5" alt="">
+                            <a href="{{ url('/') }}">
+                                <img src="assets/images/element/02.svg" class="mt-5" alt=""></a>
                             <!-- Info -->
                             <div class="d-sm-flex mt-5 align-items-center justify-content-center">
                                 <!-- Avatar group -->
@@ -143,7 +74,10 @@
                                     </li>
                                 </ul>
                                 <!-- Content -->
-                                <p class="mb-0 h6 fw-light ms-0 ms-sm-3">4+ Students joined us, now it's your turn.</p>
+                                <a href="{{ url('/') }}">
+                                    <p class="mb-0 h6 fw-light ms-0 ms-sm-3">4+ Students joined us, now it's your turn.
+                                    </p>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -220,16 +154,6 @@
                                             Or</p>
                                     </div>
 
-                                    <!-- Social btn -->
-                                    {{-- <div class="col-xxl-6 d-grid">
-                                        <a href="#" class="btn bg-google mb-2 mb-xxl-0"><i
-                                                class="fab fa-fw fa-google text-white me-2"></i>Login with Google</a>
-                                    </div> --}}
-                                    <!-- Social btn -->
-                                    {{-- <div class="col-xxl-6 d-grid">
-                                        <a href="#" class="btn bg-facebook mb-0"><i
-                                                class="fab fa-fw fa-facebook-f me-2"></i>Login with Facebook</a>
-                                    </div> --}}
                                 </div>
 
                                 <!-- Sign up link -->
