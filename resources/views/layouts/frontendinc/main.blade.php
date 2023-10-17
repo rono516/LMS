@@ -1,6 +1,8 @@
 <!doctype html>
 <!--[if IE 9]> <html class="no-js ie9 fixed-layout" lang="en"> <![endif]-->
-<!--[if gt IE 9]><!--> <html class="no-js " lang="en"> <!--<![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js " lang="en"> <!--<![endif]-->
+
 <head>
 
     <!-- Basic -->
@@ -11,7 +13,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <!-- Site Meta -->
-    <title>TukLearn</title>
+    <title>GTS - Digital Learning</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -35,36 +37,38 @@
     <![endif]-->
 
 </head>
+
 <body>
 
-<!-- LOADER -->
-<div id="preloader">
-    <img class="preloader" src="frontendassets/images/loader.gif" alt="">
-</div><!-- end loader -->
-<!-- END LOADER -->
+    <!-- LOADER -->
+    <div id="preloader">
+        <img class="preloader" src="frontendassets/images/loader.gif" alt="">
+    </div><!-- end loader -->
+    <!-- END LOADER -->
 
-<div id="wrapper">
+    <div id="wrapper">
 
-    @include('layouts.frontendinc.topnavbar')
-
-
-
-    @yield('content')
-
-    {{--    footer--}}
-    @include('layouts.frontendinc.footer')
+        @include('layouts.frontendinc.topnavbar')
 
 
-</div><!-- end wrapper -->
 
-<!-- jQuery Files -->
-<script src="frontendassets/js/jquery.min.js"></script>
-<script src="frontendassets/js/bootstrap.min.js"></script>
-<script src="frontendassets/js/carousel.js"></script>
-<script src="frontendassets/js/animate.js"></script>
-<script src="frontendassets/js/custom.js"></script>
-<!-- VIDEO BG PLUGINS -->
-<script src="frontendassets/js/videobg.js"></script>
+        @yield('content')
+
+        {{--    footer --}}
+        @include('layouts.frontendinc.footer')
+
+
+    </div><!-- end wrapper -->
+
+    <!-- jQuery Files -->
+    <script src="frontendassets/js/jquery.min.js"></script>
+    <script src="frontendassets/js/bootstrap.min.js"></script>
+    <script src="frontendassets/js/carousel.js"></script>
+    <script src="frontendassets/js/animate.js"></script>
+    <script src="frontendassets/js/custom.js"></script>
+    <!-- VIDEO BG PLUGINS -->
+    <script src="frontendassets/js/videobg.js"></script>
 
 </body>
+
 </html>

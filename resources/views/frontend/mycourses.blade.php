@@ -1,7 +1,6 @@
 @extends('layouts.frontendinc.main')
 
 @section('content')
-
     <section class="section lb p120">
         <div class="container">
             <div class="row">
@@ -9,7 +8,7 @@
                     <div class="tagline-message page-title text-center">
                         <h3>My Courses</h3>
                         <ul class="breadcrumb">
-                            <li><a href="{{url('/')}}">TukLearn</a></li>
+                            <li><a href="{{ url('/') }}">GTS - Digital Learning</a></li>
                             <li class="active">My Courses</li>
                         </ul>
                     </div>
@@ -24,7 +23,7 @@
                 <div class="shop-top">
                     <div class="clearfix">
                         <div class="pull-left">
-                            <p> Showing {{$courses->count()}} results</p>
+                            <p> Showing {{ $courses->count() }} results</p>
                         </div>
                         <div class="pull-right">
                             <select class="selectpicker">
@@ -38,11 +37,12 @@
                 </div>
 
                 <div class="row blog-grid shop-grid">
-                    @foreach($courses as $course)
+                    @foreach ($courses as $course)
                         <div class="col-md-3">
                             <div class="course-box shop-wrapper">
                                 <div class="image-wrap entry">
-                                    <img src="{{\Illuminate\Support\Facades\Storage::url($course->image_url)}}" alt="" class="img-responsive">
+                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($course->image_url) }}"
+                                        alt="" class="img-responsive">
                                     <div class="magnifier">
                                         <a href="shop-single.html" title=""><i class="flaticon-add"></i></a>
                                     </div>
@@ -50,27 +50,24 @@
                                 <!-- end image-wrap -->
                                 <div class="course-details shop-box text-center">
                                     <h4>
-                                        <a href="{{$course->id}}" title="">{{$course->title}}</a>
-                                        {{--                                    <small>Bags</small>--}}
+                                        <a href="{{ $course->id }}" title="">{{ $course->title }}</a>
                                     </h4>
                                 </div>
                                 <!-- end details -->
                                 <div class="course-footer clearfix">
                                     <div class="pull-left">
                                         <ul class="list-inline">
-                                            <li><p> <i class="flaticon-computer-tool-for-education"></i> Progress: </p></li>
-{{--                                            <i class="flaticon-online-course"></i>--}}
+                                            <li>
+                                                <p> <i class="flaticon-computer-tool-for-education"></i> Progress: </p>
+                                            </li>
                                         </ul>
                                     </div><!-- end left -->
 
                                     <div class="pull-right">
                                         <ul class="list-inline">
-                                            <li><p> X of {{$course->modules->count()}} modules</p></li>
-{{--                                            @if($course->price == 0)--}}
-{{--                                                <li><a href="#">Free Course</a></li>--}}
-{{--                                            @else--}}
-{{--                                                <li><a href="#">Ksh.{{number_format($course->price)}}</a></li>--}}
-{{--                                            @endif--}}
+                                            <li>
+                                                <p> X of {{ $course->modules->count() }} modules</p>
+                                            </li>
                                         </ul>
                                     </div><!-- end left -->
                                 </div><!-- end footer -->
@@ -86,5 +83,4 @@
                 </div>
             </div><!-- end container -->
     </section>
-
 @endsection

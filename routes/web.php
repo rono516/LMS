@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+// These are basic web pages routes
 Route::get('/', [FrontendController::class, 'index']);
 Route::get('/about_gts_learning', [FrontendController::class, 'about_gts_learning']);
 Route::get('/user_profile', [FrontendController::class, 'user_profile']);
@@ -36,8 +37,9 @@ Route::get('module/edit/{id}', [CoursesController::class, 'modules_edit'])->name
 Route::post('module/update', [CoursesController::class, 'module_update']);
 Route::post('module/delete', [CoursesController::class, 'module_delete']);
 
-// Route::middleware(['auth'])->group(function () {
-Route::get('/view/{title}', [FrontendController::class, 'view_module']);
-Route::post('/start_course/{id}', [FrontendController::class, 'start_course']);
+Route::middleware(['auth'])->group(function () {
+    // These routes will require the user to be already logged in
+    Route::get('/view/{title}', [FrontendController::class, 'view_module']);
+    Route::get('/start_course/{id}', [FrontendController::class, 'start_course']);
 
-// });
+});
