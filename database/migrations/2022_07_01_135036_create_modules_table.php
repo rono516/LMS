@@ -19,7 +19,7 @@ class CreateModulesTable extends Migration
             $table->foreign('course_id')->references('id')->on('courses');
             $table->string('title');
             $table->integer('position');
-//            $table->longText('description');
+            //            $table->longText('description');
             $table->boolean('active');
             $table->timestamps();
         });

@@ -15,19 +15,14 @@ class FrontendController extends Controller
 
         $courses = Course::all();
         // check if a user has already purchased or registered for a course and redirect to course list instead of adding to cart
-        $existing_registered_courses = CourseStudent::all()->where('user_id', "=", Auth::id())->pluck('course_id');
+        $existing_registered_courses = CourseStudent::all()->where('user_id', '=', Auth::id())->pluck('course_id');
 
         // $existing_registered_courses gives a list of courses a user has registerd for
         // we need to check if courses in frontend are in this array then we can redirect a user to course list instead of
         // asking them to add to cart
-        // $array = [1, 56, 67];
 
         // dd($existing_registered_courses[2]);
-        // if (in_array(3, $existing_registered_courses->toArray())) {
-        //     dd("We have a 3");
-        // }
-
-        // to test if a value is in array to use in frontend
+        // $existing_registered_courses->toArray()  converts a collectio instance to an array
 
         return view('frontend.index')->with([
             'courses' => $courses,
@@ -39,10 +34,12 @@ class FrontendController extends Controller
     public function view_course($id)
     {
         $course = Course::find($id);
-        if (!$course) {
+        if (! $course) {
             abort('404');
         }
+
         $modules = Module::all()->where('course_id', $course->id);
+
         return view('viewcourse')->with([
             'course' => $course,
             'modules' => $modules,
@@ -52,6 +49,7 @@ class FrontendController extends Controller
     public function all_courses()
     {
         $courses = Course::all();
+
         return view('frontend.all_courses')->with([
             'courses' => $courses,
         ]);
@@ -60,7 +58,7 @@ class FrontendController extends Controller
     public function start_course(Request $request, $id)
     {
         $course = Course::find($id);
-        $existing_registered_courses = CourseStudent::all()->where('user_id', "=", Auth::id())->where('course_id', "=", $id);
+        $existing_registered_courses = CourseStudent::all()->where('user_id', '=', Auth::id())->where('course_id', '=', $id);
         if (count($existing_registered_courses) > 0) {
             // this will output the number of times a user has registered for the same course , if already registered for
             // the course the user is only redirected to the profile to view the course list
@@ -73,9 +71,10 @@ class FrontendController extends Controller
             $courseStudent->user_id = Auth::id();
             $courseStudent->save();
             $request->session()->flash('success', 'Course registered successfully');
+
             return redirect('/user_profile');
 
-        };
+        }
 
     }
 
@@ -84,7 +83,7 @@ class FrontendController extends Controller
         $coursesStudent = CourseStudent::orderBy('id', 'DESC')->where('user_id', Auth::id())->first();
         $courses = Course::all()->where('id', '=', $coursesStudent->course_id);
 
-//        dd($courses->count());
+        //        dd($courses->count());
 
         return view('frontend.mycourses')->with([
             'coursesStudent' => $coursesStudent,
@@ -99,14 +98,17 @@ class FrontendController extends Controller
         if (Auth::check()) {
             $module->students()->attach(Auth::id());
         }
+
         return view('frontend.lessons')->with([
             'module' => $module,
         ]);
     }
+
     public function about_gts_learning()
     {
         return view('about');
     }
+
     public function contact_gts_learning()
     {
         return view('contact_us');
@@ -114,7 +116,7 @@ class FrontendController extends Controller
 
     public function user_profile()
     {
-        $student_courses = CourseStudent::all()->where('user_id', "=", Auth::id());
+        $student_courses = CourseStudent::all()->where('user_id', '=', Auth::id());
         $total_courses = count($student_courses);
 
         return view('user_dashboard')->with([
@@ -122,6 +124,7 @@ class FrontendController extends Controller
             'total_courses' => $total_courses,
         ]);
     }
+
     public function wish_list_courses()
     {
         return view('frontend.wish_list');
@@ -131,9 +134,10 @@ class FrontendController extends Controller
     {
 
         $course = Course::find($course_id);
-        if (!$course) {
+        if (! $course) {
             return redirect('/');
         }
+
         return view('frontend.course_detail')->with([
             'course' => $course,
         ]);

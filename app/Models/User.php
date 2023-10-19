@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -45,12 +44,12 @@ class User extends Authenticatable
 
     public function role(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(UserGroup::class,'user_group');
+        return $this->belongsTo(UserGroup::class, 'user_group');
     }
 
-//    public function courses(){
-//        return $this->belongsToMany(Course::class);
-//    }
+    //    public function courses(){
+    //        return $this->belongsToMany(Course::class);
+    //    }
     public function courses(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Course::class, 'course_students');

@@ -9,7 +9,8 @@ class UserPermission extends Model
 {
     use HasFactory;
 
-    public function get_permission() {
-        return $this->belongsTo(Permission::class,'permission_id');
+    public function get_permission()
+    {
+        return $this->belongsTo(Permission::class, 'permission_id');
     }
 }

@@ -21,16 +21,16 @@ class UsersSeeder extends Seeder
 
         $user = new User();
         $user->user_group = 1; //super admin
-        $user->name = "Elearn Admin";
-        $user->email = "elearn@gmail.com";
-        $user->password = bcrypt("elearn@gmail");
+        $user->name = 'Elearn Admin';
+        $user->email = 'elearn@gmail.com';
+        $user->password = bcrypt('elearn@gmail');
         $user->save();
 
         $user = new User();
         $user->user_group = 3; //student
-        $user->name = "Student One";
-        $user->email = "student@gmail.com";
-        $user->password = bcrypt("student@gmail");
+        $user->name = 'Student One';
+        $user->email = 'student@gmail.com';
+        $user->password = bcrypt('student@gmail');
         $user->save();
     }
 }

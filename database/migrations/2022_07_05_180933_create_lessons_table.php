@@ -21,19 +21,18 @@ class CreateLessonsTable extends Migration
             $table->text('lesson_image')->nullable();
             $table->string('video_link');
             $table->longText('lesson_text');
-//            $table->string('video');
+            //            $table->string('video');
             $table->boolean('is_active');
             $table->timestamps();
 
-
-//            ->module_id
-//                ->title
-//                ->lesson image
-//                ->short text
-//                ->full text
-//                ->downloadable files
-//                ->active/published
-//                ->free_lesson
+            //            ->module_id
+            //                ->title
+            //                ->lesson image
+            //                ->short text
+            //                ->full text
+            //                ->downloadable files
+            //                ->active/published
+            //                ->free_lesson
         });
     }
 

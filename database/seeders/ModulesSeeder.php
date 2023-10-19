@@ -25,23 +25,21 @@ class ModulesSeeder extends Seeder
         $module->description = 'An introduction to Eloquent models or ORM in Laravel';
         $module->active = true;
 
-
-//        'course_id',
-//        'title',
-//        'description',
-//        'active'
-
+        //        'course_id',
+        //        'title',
+        //        'description',
+        //        'active'
 
         $module = new Module();
         $module->course_id = 2;
         $module->title = 'Python basics';
         $module->description = 'An introduction to Python basics before we dive into django';
         $module->active = true;
-//
-//             'course_id',
-//        'title',
-//        'description',
-//        'active'
+        //
+        //             'course_id',
+        //        'title',
+        //        'description',
+        //        'active'
 
     }
 }

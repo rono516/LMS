@@ -13,19 +13,22 @@ class Module extends Model
         'course_id',
         'title',
         'description',
-        'active'
+        'active',
 
     ];
 
-    public function course(){
+    public function course()
+    {
         return $this->belongsTo(Course::class, 'course_id');
     }
 
-    public function lessons(){
+    public function lessons()
+    {
         return $this->hasMany(Lesson::class);
     }
 
-    public function students(){
+    public function students()
+    {
         return $this->belongsToMany(User::class, 'progress_student');
     }
 }

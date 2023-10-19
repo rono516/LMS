@@ -19,7 +19,7 @@ class CreateCoursesTable extends Migration
             $table->string('teacher');
             $table->string('short_description');
             $table->longText('description');
-            $table->decimal('price',13,2);
+            $table->decimal('price', 13, 2);
             $table->decimal('duration');
             $table->text('image_url');
             $table->date('start_date');

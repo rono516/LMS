@@ -13,36 +13,35 @@ class UserTest extends TestCase
      *
      * @return void
      */
-
-
-
     public function test_delete_user()
     {
         $user = User::factory()->count(1)->make();
         $user = User::first();
 
-        if ($user){
+        if ($user) {
             $user->delete();
         }
 
         $this->assertTrue(true);
     }
 
-      public function test_login_form(){
-          $response = $this->get('/login');
+    public function test_login_form()
+    {
+        $response = $this->get('/login');
 
-          $response->assertStatus(200);
+        $response->assertStatus(200);
 
-      }
+    }
 
-      //test user duplication
+    //test user duplication
 
-    public function test_user_duplication(){
-          $user1 = User::make([
-              'name' => 'Collins Rono',
-              'email' => 'collins@gmail.com',
+    public function test_user_duplication()
+    {
+        $user1 = User::make([
+            'name' => 'Collins Rono',
+            'email' => 'collins@gmail.com',
 
-          ]);
+        ]);
 
         $user2 = User::make([
             'name' => 'Rono',
