@@ -34,7 +34,7 @@ class FrontendController extends Controller
     public function view_course($id)
     {
         $course = Course::find($id);
-        if (! $course) {
+        if (!$course) {
             abort('404');
         }
 
@@ -82,8 +82,6 @@ class FrontendController extends Controller
     {
         $coursesStudent = CourseStudent::orderBy('id', 'DESC')->where('user_id', Auth::id())->first();
         $courses = Course::all()->where('id', '=', $coursesStudent->course_id);
-
-        //        dd($courses->count());
 
         return view('frontend.mycourses')->with([
             'coursesStudent' => $coursesStudent,
@@ -134,7 +132,7 @@ class FrontendController extends Controller
     {
 
         $course = Course::find($course_id);
-        if (! $course) {
+        if (!$course) {
             return redirect('/');
         }
 
