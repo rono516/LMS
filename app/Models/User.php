@@ -59,4 +59,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Module::class);
     }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
 }

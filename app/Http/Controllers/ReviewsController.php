@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreReviewRequest;
+use App\Http\Resources\ReviewsResource;
+use App\Models\Review;
+use App\Traits\HttpResponses;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReviewsController extends Controller
 {
+    use HttpResponses;
     /**
      * Display a listing of the resource.
      *
@@ -13,7 +19,10 @@ class ReviewsController extends Controller
      */
     public function index()
     {
-        return response()->json('Test');
+        // return Review::all();
+        return ReviewsResource::collection(
+            Review::where('user_id', Auth::user()->id)->get());
+
     }
 
     /**
@@ -31,9 +40,16 @@ class ReviewsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreReviewRequest $request)
     {
-        //
+        $request->validated($request->all());
+        $review = Review::create([
+            'user_id' => Auth::user()->id,
+            'title' => $request->title,
+            'description' => $request->description,
+        ]);
+
+        return new ReviewsResource($review);
     }
 
     /**
@@ -42,9 +58,13 @@ class ReviewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Review $review)
     {
-        //
+        // if (Auth::user()->id != $review->user->id) {
+        //     return $this->error('', 'You are not authorized to request', 401);
+        // }
+
+        return $this->isNotAuthorized($review) ? $this->isNotAuthorized($review) : new ReviewsResource($review);
     }
 
     /**
@@ -64,9 +84,13 @@ class ReviewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Review $review)
     {
-        //
+        if (Auth::user()->id != $review->user->id) {
+            return $this->error('', 'You are not authorized to request', 401);
+        }
+        $review->update($request->all());
+        return new ReviewsResource($review);
     }
 
     /**
@@ -75,8 +99,18 @@ class ReviewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Review $review)
     {
-        //
+        // $review->delete();
+        // return response(null, 204);
+
+        return $this->isNotAuthorized($review) ? $this->isNotAuthorized($review) : $review->delete();
+    }
+
+    private function isNotAuthorized($review)
+    {
+        if (Auth::user()->id != $review->user->id) {
+            return $this->error('', 'You are not authorized to request', 401);
+        }
     }
 }
