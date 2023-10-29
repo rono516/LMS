@@ -20,7 +20,7 @@ class AuthController extends Controller
         // if (!Auth::attempt([$request->only('email', 'password')])) {
         //     return $this->error('', 'Credentials do not match', 401);
         // }
-        if (!Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+        if (! Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             // code...
             return $this->error('', 'Credentials do not match', 401);
         }
@@ -29,7 +29,7 @@ class AuthController extends Controller
 
         return $this->success([
             'user' => $user,
-            'token' => $user->createToken('API Token of ' . $user->name)->plainTextToken,
+            'token' => $user->createToken('API Token of '.$user->name)->plainTextToken,
         ]);
 
     }
@@ -45,7 +45,7 @@ class AuthController extends Controller
 
         return $this->success([
             'user' => $user,
-            'token' => $user->createToken('API Token of ' . $user->name)->plainTextToken,
+            'token' => $user->createToken('API Token of '.$user->name)->plainTextToken,
         ]);
 
     }

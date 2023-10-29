@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class ReviewsController extends Controller
 {
     use HttpResponses;
+
     /**
      * Display a listing of the resource.
      *
@@ -90,6 +91,7 @@ class ReviewsController extends Controller
             return $this->error('', 'You are not authorized to request', 401);
         }
         $review->update($request->all());
+
         return new ReviewsResource($review);
     }
 
